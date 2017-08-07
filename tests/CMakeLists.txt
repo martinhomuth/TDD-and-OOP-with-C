@@ -17,8 +17,12 @@ LINK_DIRECTORIES($ENV{CPPUTEST_HOME}/lib -lCppUTest -lCppUTestExt)
 # add cpputest library
 ADD_LIBRARY(imp_cpputest STATIC IMPORTED)
 SET_PROPERTY(TARGET imp_cpputest PROPERTY
-             IMPORTED_LOCATION $ENV{CPPUTEST_HOME}/lib/libCppUTest.a)
+  IMPORTED_LOCATION $ENV{CPPUTEST_HOME}/lib/libCppUTest.a)
+
+ADD_LIBRARY(MoneyTest ./Money/money_test.cpp)
+TARGET_LINK_LIBRARIES(MoneyTest Money)
 
 ADD_EXECUTABLE(RunAllTests RunAllTests.cpp)
 TARGET_LINK_LIBRARIES(RunAllTests imp_cpputest
+  MoneyTest
 )

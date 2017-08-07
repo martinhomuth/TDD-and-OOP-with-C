@@ -7,3 +7,6 @@ SET(CMAKE_CXX_FLAGS ${ORIG_CXX_FLAGS})
 
 SET(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-Wall -pedantic -Werror -std=c11")
 
+ADD_LIBRARY(Money ./Money/money.c)
+
+ADD_EXECUTABLE(Application ./Application/application.c)

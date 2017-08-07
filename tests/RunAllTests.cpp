@@ -1,6 +1,6 @@
 #include "CppUTest/CommandLineTestRunner.h"
 
-//IMPORT_TEST_GROUP();
+IMPORT_TEST_GROUP(Money);
 
 int main(int argc, char** argv)
 {
