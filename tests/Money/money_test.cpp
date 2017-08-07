@@ -1,7 +1,9 @@
 #include "CppUTest/TestHarness.h"
 
 extern "C" {
-
+	#include "Dollar.h"
+	#include "new.h"
+	#include "object.h"
 }
 
 TEST_GROUP(Money)
@@ -19,7 +21,7 @@ TEST_GROUP(Money)
 
 TEST(Money, testMultiplication)
 {
-	Dollar five = new Dollar(5);
-	five.times(2);
-	CHECK_EQUAL(10, five.amount);
+	void *five = m_new(Dollar, 5);
+	times(five, 2);
+	CHECK_EQUAL(10, amount(five));
 }
